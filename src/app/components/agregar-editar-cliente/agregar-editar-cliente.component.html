@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <h2>{{ isEditMode ? 'Editar Cliente' : 'Agregar Nuevo Cliente' }}</h2>
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
+      <!-- TipoID -->
+      <div class="form-group">
+        <label for="tipoID">Tipo de ID</label>
+        <input type="text" class="form-control" id="tipoID" [(ngModel)]="cliente.tipoID" name="tipoID" required>
+      </div>
+  
+      <!-- NroID -->
+      <div class="form-group">
+        <label for="nroID">Número de ID</label>
+        <input type="text" class="form-control" id="nroID" [(ngModel)]="cliente.nroID" name="nroID" required>
+      </div>
+  
+      <!-- Nombre -->
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="cliente.nombre" name="nombre" required>
+      </div>
+  
+      <!-- Apellido -->
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" class="form-control" id="apellido" [(ngModel)]="cliente.apellido" name="apellido" required>
+      </div>
+  
+      <!-- Usuario -->
+      <div class="form-group">
+        <label for="usuario">Usuario</label>
+        <input type="text" class="form-control" id="usuario" [(ngModel)]="cliente.usuario" name="usuario" required>
+      </div>
+  
+      <!-- Contraseña -->
+      <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" class="form-control" id="contrasena" [(ngModel)]="cliente.contrasena" name="contrasena" required>
+      </div>
+  
+      <!-- Número de Celular -->
+      <div class="form-group">
+        <label for="noCelular">Número de Celular</label>
+        <input type="text" class="form-control" id="noCelular" [(ngModel)]="cliente.noCelular" name="noCelular" required>
+      </div>
+  
+      <!-- Correo Electrónico -->
+      <div class="form-group">
+        <label for="correoElectronico">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correoElectronico" [(ngModel)]="cliente.correoElectronico" name="correoElectronico" required>
+      </div>
+  
+      <!-- Botones de Acción -->
+      <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Actualizar' : 'Guardar' }}</button>
+        <button type="button" class="btn btn-secondary" (click)="cancel()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+  

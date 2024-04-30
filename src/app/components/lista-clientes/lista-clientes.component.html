@@ -1,0 +1,13 @@
+<div class="clientes-container">
+    <h2>Lista de Clientes</h2>
+    <ul class="lista-clientes">
+        <li *ngFor="let cliente of clientes" class="cliente-item">
+            {{ cliente.nombre }} {{ cliente.apellido }} - {{ cliente.correoElectronico }}
+            <div class="acciones">
+                <button class="btn eliminar" (click)="deleteCliente(cliente.id)">Eliminar</button>
+                <button class="btn editar" (click)="editCliente(cliente)">Editar</button>
+            </div>
+        </li>
+    </ul>
+    <button class="btn agregar" (click)="nuevoCliente()">Agregar Nuevo Cliente</button>
+</div>
